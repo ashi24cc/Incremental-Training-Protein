@@ -8,4 +8,13 @@ This has following main python files.
   4) Evaluate.py - This contains the code for the evaluation metrics.
 
 This repository contains the dataset for the BP and MF gene ontology.
-Use the `python train.py` command to start training.
+
+# Trainig from scratch
+The major steps with training are as follows:
+Step 1: Run `python Model.py`                   <==== Create an instance of LiteSeqCNN
+Step 2: Run `python Incremental_Training.py`    <==== Start the incremental training
+
+# Trainig from scratch
+The major steps with testing are as follows:
+Step 1: Run `python Evaluate.py`                <==== Code for the evaluation metrics.
+Step 2: Run `python Predict.py`                 <==== Code for performing the prediction on unseen data.
