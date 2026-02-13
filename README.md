@@ -18,5 +18,7 @@ Step 2: Run `python Incremental_Training.py`    <==== Start the incremental trai
 
 # Trainig from scratch
 The major steps with testing are as follows:
+
 Step 1: Run `python Evaluate.py`                <==== Code for the evaluation metrics.
+
 Step 2: Run `python Predict.py`                 <==== Code for performing the prediction on unseen data.
