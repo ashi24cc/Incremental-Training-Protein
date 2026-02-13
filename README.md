@@ -10,10 +10,10 @@ This has following main python files.
 This repository contains the dataset for the BP and MF gene ontology.
 
 # Requirements
-Python
-Tensorflow >= 2.0
-Keras
-Pandas, Numpy
+1. Python
+2. Tensorflow >= 2.0
+3. Keras
+4. Pandas, Numpy
 
 # Trainig from scratch
 Download the BP and MF datasets and set the training path in `Model.py` and `Incremental.py`.
