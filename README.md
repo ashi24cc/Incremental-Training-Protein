@@ -1,5 +1,5 @@
 # Incremental-Training-Protein
-This is repository for Incremrental learning.
+This is repository for Incremental learning.
 
 This has following main python files.
   1) Model.py - This python file contains the code for CNN-based segment encoder.
