@@ -7,7 +7,7 @@ This has following main python files.
   3) Predict.py - This contains the code for the predicting on unseen data.
   4) Evaluate.py - This contains the code for the evaluation metrics.
 
-This repository contains the dataset for the BP and MF gene ontology.
+This repository contains the dataset for the BP and MF gene ontology. The CAFA3 dataset can be downlaoded from https://deepgo.cbrc.kaust.edu.sa/data/
 
 # Requirements
 1. Python
