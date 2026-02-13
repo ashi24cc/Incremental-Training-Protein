@@ -8,3 +8,4 @@ This has following main python files.
   4) Evaluate.py - This contains the code for the evaluation metrics.
 
 This repository contains the dataset for the BP and MF gene ontology.
+Use the `python train.py` command to start training.
