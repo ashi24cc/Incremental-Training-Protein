@@ -11,7 +11,9 @@ This repository contains the dataset for the BP and MF gene ontology.
 
 # Trainig from scratch
 The major steps with training are as follows:
+
 Step 1: Run `python Model.py`                   <==== Create an instance of LiteSeqCNN
+
 Step 2: Run `python Incremental_Training.py`    <==== Start the incremental training
 
 # Trainig from scratch
