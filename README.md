@@ -10,7 +10,7 @@ This has following main python files.
 This repository contains the dataset for the BP and MF gene ontology. The CAFA3 dataset can be downlaoded from https://deepgo.cbrc.kaust.edu.sa/data/
 
 # Requirements
-1. Python
+1. Python 3.14
 2. Tensorflow >= 2.0
 3. Keras
 4. Pandas, Numpy
@@ -18,7 +18,7 @@ This repository contains the dataset for the BP and MF gene ontology. The CAFA3 
 # Dataset
 The dataset for BP and MF is presents in the BP and MF folders, respectively.
 
-# Trainig from scratch
+# Training from scratch
 Download the BP and MF datasets and set the training path in `Model.py` and `Incremental.py`.
 The major steps with training are as follows:
 
