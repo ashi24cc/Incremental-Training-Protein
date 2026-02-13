@@ -1,5 +1,5 @@
 # Incremental-Training-Protein
-This is repository for Incremental learning.
+This is repository for the Incremental learning.
 
 This has following main python files.
   1) Model.py - This python file contains the code for CNN-based segment encoder.
@@ -29,3 +29,5 @@ The major steps with testing are as follows:
 Step 1: Run `python Evaluate.py`                <==== Code for the evaluation metrics.
 
 Step 2: Run `python Predict.py`                 <==== Code for performing the prediction on unseen data.
+
+The paper is under review at Scientific Reports.
