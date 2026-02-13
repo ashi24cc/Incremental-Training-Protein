@@ -15,6 +15,9 @@ This repository contains the dataset for the BP and MF gene ontology.
 3. Keras
 4. Pandas, Numpy
 
+# Dataset
+The dataset for BP and MF is presents in the BP and MF folders, respectively.
+
 # Trainig from scratch
 Download the BP and MF datasets and set the training path in `Model.py` and `Incremental.py`.
 The major steps with training are as follows:
