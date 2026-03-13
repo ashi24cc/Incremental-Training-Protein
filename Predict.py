@@ -1,4 +1,12 @@
-from keras.models import load_model
+import numpy as np
+import pandas as pd
+import math
+from Evaluate import recall, precision
+from Model import nGram
+from Incremental_Training import chunkSize, max_seq_len, dict_Prop, model
+from keras.preprocessing import sequence
+
+segmentSize = 200
 
 def cls_predict(pred, normalize=True, sample_weight=None):
     s_mean = np.mean(pred, axis=0)
@@ -27,15 +35,6 @@ def final_model(filename):
     c_p = np.array(c_p)
     return c_p, Y_test
 
-def create_nn_model(dim):
-    n_model = Sequential()
-    n_model.add(Dense(dim, input_dim = dim, kernel_initializer='normal', activation='relu'))
-    n_model.add(Dense(dim, kernel_initializer='normal', activation='sigmoid'))
-    n_model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['binary_accuracy'])
-    return n_model
-
-from matplotlib import pyplot as plt
-
 # Testing
 def test_fun(file):
     X_test_new, Y_test_new = final_model(file)
@@ -58,10 +57,9 @@ def test_fun(file):
         recalls.append(rec)
         precisions.append(pre)
 
-        f1 = f_score(Y_test_new, test_preds)*100
         f = 2 * pre * rec / (pre + rec)
         print('Recall: {0}'.format(rec*100), '     Precision: {0}'.format(pre*100),
-              '     F1-score1: {0}'.format(f*100), '      F1-score2: {0}'.format(f1))
+              '     F1-score1: {0}'.format(f*100))
 
         if fmax < f:
             fmax = f
@@ -72,19 +70,7 @@ def test_fun(file):
     sorted_index = np.argsort(recalls)
     recalls = recalls[sorted_index]
     precisions = precisions[sorted_index]
-    aupr = np.trapz(precisions, recalls)
-    print(f'AUPR: {aupr:0.3f}')
-
-    plt.figure()
-    plt.plot(recalls, precisions, color='darkorange', lw=2, label=f'AUPR curve (area = {aupr:0.2f})')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.title('Area Under the Precision-Recall curve')
-    plt.legend(loc="upper right")
-    plt.savefig(f'aupr.pdf')
 
     return tmax
 
-th_set = test_fun("/content/gdrive/My Drive/Transformer_positional_embedding/data2017/bp/testData.csv")
+th_set = test_fun("bp/testData.csv")
