@@ -1,19 +1,11 @@
-import math
 import pandas as pd
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
-from tensorflow.keras.models import load_model
-from keras import backend as K
-from keras.preprocessing import sequence
-from keras.models import Sequential
-from keras.layers import Dense
-from sklearn.model_selection import train_test_split
-import keras
 tf.random.set_seed(7)
 
 def dictionary(chunk_size):
-    dataframe = pd.read_csv("/content/gdrive/My Drive/Transformer_positional_embedding/data2017/bp/trainData.csv", header=None)
+    dataframe = pd.read_csv("bp/trainData.csv", header=None)
     dataset = dataframe.values
     del dataframe
 
@@ -42,11 +34,6 @@ def nGram(dataset, chunk_size, dictI):
                 None
         dict1.append(dict2)
     return(dict1)
-
-# CREATING DICTIONARY
-chunkSize = 4
-dict_Prop = dictionary(chunkSize)
-max_seq_len = segmentSize - chunkSize + 1
 
 def scaledSoftmax(x, axis=-1):
     ndim = keras.ops.ndim(x)
@@ -98,7 +85,3 @@ def DC_CNN_Model(top_words, seq_len, o_dim):
                   optimizer = tf.keras.optimizers.Adam(learning_rate=0.0005),
                   metrics = [tf.keras.metrics.BinaryAccuracy(threshold=0.5)])
     return model
-
-# Create & Compile the model
-model = DC_CNN_Model(len(dict_Prop), max_seq_len, nb_of_cls)
-print(model.summary())
