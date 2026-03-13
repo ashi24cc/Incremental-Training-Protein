@@ -33,4 +33,8 @@ Step 1: Run `python Evaluate.py`                <==== Code for the evaluation me
 
 Step 2: Run `python Predict.py`                 <==== Code for performing the prediction on unseen data.
 
+# Alternative approach to run code:
+
+Rune the example python file inside Example directory in the Google Colab. Set the dataset directory if needed.
+
 The paper is under review at Scientific Reports.
