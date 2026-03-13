@@ -1,3 +1,11 @@
+import math
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from keras.preprocessing import sequence
+from Model import nGram, dictionary, DC_CNN_Model
+import keras
+
 def segment(dataset, label, seg_size, overlap, m_len):
     print("Non-overlapping Region: %s" %overlap)
     print("Segment Size: %s" %seg_size)
@@ -15,7 +23,7 @@ def segment(dataset, label, seg_size, overlap, m_len):
                     label_data.append(label[j])
     return seq_data, label_data
 
-dataframe = pd.read_csv('/content/gdrive/My Drive/Transformer_positional_embedding/data2017/bp/trainData.csv', header=None)
+dataframe = pd.read_csv('bp/trainData.csv', header=None)
 dataset = dataframe.values
 print('Original Dataset Size : %s' %len(dataset))
 X = dataset[:,0]
@@ -29,6 +37,15 @@ print(nb_of_cls)
 segmentSize = 200
 nonOL = segmentSize - 100
 SEG = str(segmentSize)
+
+# CREATING DICTIONARY
+chunkSize = 4
+dict_Prop = dictionary(chunkSize)
+max_seq_len = segmentSize - chunkSize + 1
+
+# Create & Compile the model
+model = DC_CNN_Model(len(dict_Prop), max_seq_len, nb_of_cls)
+print(model.summary())
 
 div = [200, 500, 1000, 2000]
 for max_len in div:
@@ -57,7 +74,7 @@ for max_len in div:
     early_stopping_monitor1 = keras.callbacks.EarlyStopping(monitor = 'val_loss', patience = 5, verbose = 1)
     history = model.fit(x_train, y_train.astype(None),
                         validation_data = (x_validate, y_validate.astype(None)),
-                        epochs = 1000,
+                        epochs = 2,
                         batch_size = 150,
                         callbacks=[early_stopping_monitor1],
                         verbose=1)
