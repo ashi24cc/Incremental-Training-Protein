@@ -3,7 +3,7 @@ This is repository for the Incremental learning.
 
 This has following main python files.
   1) Model.py - This python file contains the code for CNN-based segment encoder.
-  2) Incremental_Training.py - This contains the code for segmentation + incremental training.
+  2) Incremental_Training_Predict.py - This contains the code for segmentation + incremental training + Testing.
   3) Predict.py - This contains the code for the predicting on unseen data.
   4) Evaluate.py - This contains the code for the evaluation metrics.
 
@@ -24,14 +24,9 @@ The major steps with training are as follows:
 
 Step 1: Run `python Model.py`                   <==== Create an instance of LiteSeqCNN
 
-Step 2: Run `python Incremental_Training.py`    <==== Start the incremental training
+Step 2: Run `python Evaluate.py`                <==== Code for the evaluation metrics.
 
-# Testing
-The major steps with testing are as follows:
-
-Step 1: Run `python Evaluate.py`                <==== Code for the evaluation metrics.
-
-Step 2: Run `python Predict.py`                 <==== Code for performing the prediction on unseen data.
+Step 3: Run `python Incremental_Training_Predict.py`    <==== Start the incremental training + Predict
 
 # Alternative approach to run code:
 
