@@ -111,7 +111,7 @@ def final_model(filename, segmentSize):
     c_p = np.array(c_p)
     return c_p, Y_test
 
-X_test_new, Y_test_new = final_model("bp/testData.csv", segmentSize)
+X_test_new, Y_test_new = final_model("bp/testData1.csv", segmentSize)
 print(X_test_new.shape, Y_test_new.shape)
 Y_test_new = np.array(Y_test_new).astype(None)
 
