@@ -25,7 +25,7 @@ def segment(dataset, label, seg_size, overlap, m_len):
                     label_data.append(label[j])
     return seq_data, label_data
 
-dataframe = pd.read_csv('bp/trainData.csv', header=None)
+dataframe = pd.read_csv('mf/trainData.csv', header=None)
 dataset = dataframe.values
 print('Original Dataset Size : %s' %len(dataset))
 X = dataset[:,0]
@@ -111,7 +111,7 @@ def final_model(filename, segmentSize):
     c_p = np.array(c_p)
     return c_p, Y_test
 
-X_test_new, Y_test_new = final_model("bp/testData1.csv", segmentSize)
+X_test_new, Y_test_new = final_model("mf/testData1.csv", segmentSize)
 print(X_test_new.shape, Y_test_new.shape)
 Y_test_new = np.array(Y_test_new).astype(None)
 
