@@ -5,7 +5,7 @@ from tensorflow.keras import layers
 tf.random.set_seed(7)
 
 def dictionary(chunk_size):
-    dataframe = pd.read_csv("bp/trainData.csv", header=None)
+    dataframe = pd.read_csv("mf/trainData.csv", header=None)
     dataset = dataframe.values
     del dataframe
 
@@ -34,16 +34,6 @@ def nGram(dataset, chunk_size, dictI):
                 None
         dict1.append(dict2)
     return(dict1)
-
-def scaledSoftmax(x, axis=-1):
-    ndim = keras.ops.ndim(x)
-    if ndim == 2:
-        s = keras.ops.softmax(x)
-        m = keras.ops.max(s, axis = -1, keepdims=True)
-        p = s/m
-        return 1*p
-    else:
-        raise ValueError('Cannot apply softmax to a tensor that is 1D')
 
 def DC_CNN_Block(nb_filter, filter_length, dilation, l2_layer_reg):
     def f(input_):
