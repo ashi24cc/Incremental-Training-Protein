@@ -30,5 +30,5 @@ Step 3: Run `python Incremental_Training_Predict.py`    <==== Start the incremen
 
 # Alternative approach to run code:
 
-Rune the example python file inside Example directory in the Google Colab. Set the dataset directory if needed.
+Run the example python file inside Example directory in the Google Colab. Set the dataset directory if needed.
 
