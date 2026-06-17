@@ -32,4 +32,3 @@ Step 3: Run `python Incremental_Training_Predict.py`    <==== Start the incremen
 
 Rune the example python file inside Example directory in the Google Colab. Set the dataset directory if needed.
 
-The paper is under review at Scientific Reports.
