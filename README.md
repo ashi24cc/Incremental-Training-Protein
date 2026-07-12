@@ -8,6 +8,7 @@ This has following main python files.
   4) Evaluate.py - This contains the code for the evaluation metrics.
 
 This repository contains the dataset for the BP and MF gene ontology. The CAFA3 dataset can be downlaoded from https://deepgo.cbrc.kaust.edu.sa/data/
+data-cafa.tar.gz - CAFA3 challenge dataset
 
 # Requirements
 1. Python 3.14
